@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberRisk Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CyberRisk Calculator</h1>
+        <nav>
+            <a href="#how-it-works" aria-label="How It Works Section">How It Works</a>
+            <a href="#assessment-tool" aria-label="Start Your Assessment Section">Start Your Assessment</a>
+            <a href="#about" aria-label="About Section">About</a>
+            <a href="#contact" aria-label="Contact Section">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Assess Your Cybersecurity Risk Today!</h2>
+        <p>A simple tool for small businesses to evaluate and mitigate cybersecurity threats.</p>
+        <button id="start-assessment">Start Your Assessment</button>
+    </section>
+
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Input Information</li>
+            <li>Risk Calculation</li>
+            <li>Results and Recommendations</li>
+        </ol>
+    </section>
+
+    <section id="assessment-tool">
+        <h2>Risk Assessment Tool</h2>
+        <form id="risk-form">
+            <label for="business-size">1. What is the size of your business in terms of the number of employees?</label>
+            <select id="business-size" name="business-size" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1-10">1-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-100">51-100</option>
+                <option value="101-250">101-250</option>
+                <option value="More than 250">More than 250</option>
+            </select>
+
+            <label for="industry-type">2. What industry does your business operate in?</label>
+            <select id="industry-type" name="industry-type" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Retail">Retail</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Finance">Finance</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Technology">Technology</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="cyber-awareness">3. How aware are you of cybersecurity threats relevant to your industry?</label>
+            <select id="cyber-awareness" name="cyber-awareness" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Very aware">Very aware</option>
+                <option value="Somewhat aware">Somewhat aware</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Somewhat unaware">Somewhat unaware</option>
+                <option value="Not aware at all">Not aware at all</option>
+            </select>
+
+            <label for="cyber-training">4. Have you provided cybersecurity training for your employees?</label>
+            <select id="cyber-training" name="cyber-training" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Planning to provide training">Planning to provide training</option>
+            </select>
+
+            <label for="cyber-team">5. Do you have a dedicated person or team responsible for cybersecurity?</label>
+            <select id="cyber-team" name="cyber-team" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Yes, in-house">Yes, in-house</option>
+                <option value="Yes, outsourced">Yes, outsourced</option>
+                <option value="No">No</option>
+            </select>
+
+        <label for="cyber-measures">6. What cybersecurity measures do you currently implement? (Select all that apply)</label>
+        <div id="cyber-measures" class="checkbox-group">
+            <div class="checkbox-item">
+                <input type="checkbox" id="firewalls" name="cyber-measures" value="Firewalls">
+                <label for="firewalls">Firewalls</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="antivirus" name="cyber-measures" value="Antivirus software">
+                <label for="antivirus">Antivirus software</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="backups" name="cyber-measures" value="Regular data backups">
+                <label for="backups">Regular data backups</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="training" name="cyber-measures" value="Employee training programs">
+                <label for="training">Employee training programs</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="mfa" name="cyber-measures" value="Multi-factor authentication">
+                <label for="mfa">Multi-factor authentication</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="insurance" name="cyber-measures" value="Cybersecurity insurance">
+                <label for="insurance">Cybersecurity insurance</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="none" name="cyber-measures" value="None of the above">
+                <label for="none">None of the above</label>
+            </div>
+        </div>
+
+            <label for="cyber-policy">7. Do you have a formal cybersecurity policy in place?</label>
+            <select id="cyber-policy" name="cyber-policy" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="In development">In development</option>
+            </select>
+
+            <label for="incident-plan">8. Do you have an incident response plan for cybersecurity incidents?</label>
+            <select id="incident-plan" name="incident-plan" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="In development">In development</option>
+            </select>
+
+            <label for="cyber-incidents">9. Have you experienced any cybersecurity incidents in the past year?</label>
+            <select id="cyber-incidents" name="cyber-incidents" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Calculate Risk</button>
+        </form>
+        <div id="results" class="hidden">
+            <h3>Risk Score: <span id="risk-score"></span></h3>
+            <p>Likelihood of Threat: <span id="likelihood"></span></p>
+            <h4>Recommendations:</h4>
+            <ul id="recommendations"></ul>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>This tool helps small businesses in developing countries assess their cybersecurity risk and provides recommendations to improve their security posture.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>For more information, contact us at <a href="mailto:info@cyberrisk.com">info@cyberrisk.com</a>.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
